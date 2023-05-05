@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+.header{
+    padding:16px;
+    background-color:rgb(0,120,98);
+    color:white;
+    font-size:20px;
+}
+body{
+    font-size:20px;
+}
+.search{
+    align-items:center;
+    font-size:20px;
+
+}
+.bt1{
+    background-color:rgb(0,120,98);
+    cursor:pointer;
+    color:white;
+}
+.cont{
+    border:2px solid grey;
+}
+.each{
+    border:1px solid lightgray;
+    padding:6px;
+}
+.CalorieCount{
+    border:1px solid lightGrey;
+    max-width:300px;
+    font-size:20px;
+}

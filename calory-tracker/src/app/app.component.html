@@ -1,0 +1,54 @@
+<p class="header" id="headerContainer">Calory Tracker</p>
+<div>
+<label>Search</label>
+ 
+  <input  type="text" name="search" id="searchBox" class="search" [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}" autocomplete="off" placeholder="Search">
+<div align="center"><p class="CalorieCount" id="totalCalories" >Today's Foods Calories Count- {{c}}cal</p></div>
+
+
+
+<div>
+    <button (click)="onClickOpenForm()" id="newFood" class="bt1" >Add New Food</button>
+    <br/>
+    <br/>
+    <div [hidden]="!openform">
+        <form>
+    <label>Name</label>
+    <input type="text" id="name" (change)="AddName($event)" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+    <br>
+    <br>
+    <label>Calories</label>
+    <input type="number" id="calories" (change)="AddCalories($event)"[(ngModel)]="calorie" [ngModelOptions]="{standalone: true}">
+    <br>
+    <br/>
+    <label>Image</label>
+    <input type="text" id="image" (change)="AddImage($event)"[(ngModel)]="image" [ngModelOptions]="{standalone: true}"placeholder="paste image link">
+    <br>
+    <br>
+    <button (click)="AddFood()" class="bt1" >Add</button>
+        </form></div>
+
+
+    
+<div  id="displayContainer">
+ 
+
+<div class=cont>
+
+    <ul *ngFor="let f of Foods | filter:searchText">
+      <div class="each" style="display: flex;">
+      <p><img [src]="f.images" alt="Food" width="100px" height="60px"> </p>
+        <p>&nbsp;&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;{{f.names}} </p>
+      <p>&nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;Calory-{{f.calories}} &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;</p><br/>
+      <br />  <br /><br />
+      <button (click)="AddCount(f.calories)" class="bt1" style="width:45px;height:25px;">Add</button>
+
+    </div>
+     
+  </ul>
+
+</div>
+
+</div>
+
+</div>
